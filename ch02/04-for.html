@@ -1,0 +1,75 @@
+<html>
+    <body>
+        <script>
+            /**
+             * for (시작; 조건; 증가) {
+             *  // 조건이 참인동안 이 블록을 반복 실행 
+             * }
+             * i ++ => i = i + 1
+             **/
+            for(let i = 0; i < 10 ; i++) {
+                console.log(i);                
+            }
+            // 1 부터 100 까지 더한 값을 알고 싶어요
+            let sum = 0;
+            for(let i = 1 ; i<= 100; i++){
+                sum = sum + i; // sum 에 i 값을 계속 더한다
+            }
+            console.log(sum);
+            
+            //문제 :  50 부터 200 까지 더한 값을 출력해보세요
+            let sum2 = 0;
+            for(let i = 50 ; i <= 200 ; i++) {
+                sum2 = sum2 + i
+            }
+            console.log(sum2);
+            // console.log("0" == 0)
+            // 1부터 50까지 중에서 짝수만 출력한다 
+            // for(let i = 1; i <= 50 ; i++) {
+            //     if( i % 2 === 0){ // 짝수는 2로 나눈 나머지가 0 
+            //         console.log(i)
+            //     }                
+            // }
+
+            // 문제2 1부터 100까지 찍는데 홀수만 찍어보세요  // 2로 나눈 나머지가 1 
+            // for (let i = 1; i< 100;i++) {
+            //     if (i % 2 === 1) {
+            //         console.log(i)
+            //     }
+            // }
+            console.log('-------')
+            // 1부터 10까지 더하는데 더한값이 30을 넘으면 그만두고 종료 
+            let sum3 = 0
+            for( let i = 1; i <= 10; i++) {
+                sum3 = sum3 + i;
+                if(sum3 > 30){
+                    break;
+                }
+                console.log(i, sum3); // <- 이게 언제까지 찍히는지 7, 28 
+            }
+            /**
+             * i = 1,  sum3 = 1 if (1 > 30) => 1, 1 
+             * i = 2,  sum3 = 1 + 2 = 3  if ( 3 > 30 ) => 2, 3
+             * i = 3,  sum3 = 3 + 3 = 6  if ( 6 > 30 ) => 3, 6
+             * i = 4,  sum3 = 4 + 6 = 10 if ( 10 > 30 ) => 4, 10
+             * i = 5,  sum3 = 5 + 10 = 15 if( 15 > 30 ) => 5, 15
+             * i = 6,  sum3 = 6 + 15 = 21 if ( 21 > 30) => 6, 21 
+             * i = 7,  sum3 = 7 + 21 = 28 if( 28 > 30 ) => 7, 28
+             * i = 8,  sum3 = 8 + 28 = 36 if (36 > 30) break; 8, 36 
+             **/
+            console.log(sum3); //  <-- 이게 어떻게 찍히는지 
+            console.log('-------')
+            // 1부터 10 까지 홀수만 더해볼꺼에요
+            let oddSum = 0;
+            for(let i = 1; i<=10 ;i++) {
+                if ( i % 2 === 0) {
+                    continue; // 이 구문을 만나면 아래 코드는 실행하지 않고 다음 반복으로 걍 
+                }
+                oddSum = oddSum + i;
+                console.log(i, oddSum)
+            }
+        </script>
+
+    </body>
+
+</html>

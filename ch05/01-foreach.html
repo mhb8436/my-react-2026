@@ -1,0 +1,97 @@
+<html>
+    <body>
+        <script>
+            const numbers = [1,2,3,4];
+            // 문제 1  doulbeNum 에
+            // numbers 배열의 원소에 2배를 더해서 넣어주세요
+            // doubleNum = [2,4,6,8] 저장될 수 있게 해주세요
+            const doubleNum = [];
+            for(let i =0 ; i < numbers.length ; i++){
+                doubleNum.push(numbers[i] * 2)
+            }
+            console.log(doubleNum)
+
+            const doubleNum2 = numbers.map(
+                (i) => i * 2 // i에 2를 곱하고 자동으로 return 
+            );
+            
+            // 배열에 달려있는 기본함수 map은
+            // 배열의 각 항목을 바꿔가면서 새 배열을 돌려주는데
+            // map 함수에 인자로 들어간 함수를 호출해서 작업후에
+            // 새 배열로 만들어준다. 
+            console.log(doubleNum2)
+
+            // numbers3 상수를 정의하고
+            // 여기에 numbers 각각의 요소어 5배를 더한 배열을 
+            // 만들어서 넣어주세요
+            const numbers3 = numbers.map((x)=>x*5)
+            console.log(numbers3);
+
+            const numbers4 = numbers.map((x)=>{
+                return x*4;
+            });
+            // numbers4
+            // map 함수 인자에 있는 콜백(화살표) 함수는 배열내 매 요소를 순회 하면서
+            // 새로운 배열에 그 값을 전달한다. 
+            // (1) => 1*4  ->  numbers4.push(1*4)
+            // (2) => 2*4 ->  numbers4.push(2*4)
+             // (3) => 3*4 ->  numbers4.push(3*4)
+            console.log(numbers4);
+
+            const price = [1500, 3000, 4500, 50000, 3600000 ]
+            // const priceText = [];
+            // priceText = ['1500원','3000원', '4500원', '500000원', '3600000원']
+            const priceText = price.map((x) => `${x}원`)
+            console.log(priceText);
+
+            // 문제 3
+            const fruits = ["사과", "바나나", "포도", "오렌지", "수박" , "복숭아", "자두", "앵두"]
+            // const fruitsText  배열에 
+            // ["맛있는 사과", "맛있는 바나나", "맛있는 포도", "맛있는 오렌지", "맛있는 수박", "맛있는 복숭아"]
+            const fruitsText = fruits.map(
+                (f) => {
+                    return `맛있는 ${f}`
+                }
+            );
+            console.log(fruitsText);
+
+            const users = [
+                {name: "수진", score: 90},
+                {name: "지아", score: 75},
+                {name: "태은", score: 50},
+                {name: "소영", score: 100},
+                {name: "유진", score: 80},
+            ];
+            // 응용문제 5 
+            // const names 배열에 users의 이름만 넣어보세요 
+            // user.name 
+            // names = ["수진","지아","태은","소영","유진"]
+            const names = users.map((u)=>{
+                return u.name;
+            })
+            console.log(names);
+
+            // scores 배열에 학생들의 점수를 담아보세요
+            // scores = [90, 75, 50, 100, 80]
+            const scores = users.map((u)=>u.score)
+            console.log(scores)
+
+            users.forEach((u)=> {
+                console.log(u);
+            });
+            // for(let i=0;i<users.length; i++){
+            //     console.log(users[i])
+            // }
+            const newUsers = users.forEach((x) => x.name);
+            console.log(newUsers);
+
+            const temps = [-10, -5, 0, 10, 20, 30, 40 ];
+            // forEach 를 돌면서
+            // console.log 로 "-10도" "-5도" ....
+            temps.forEach((t, i) => {
+                console.log(`${t} 도`, i);
+            });
+
+        </script>
+    </body>
+</html>

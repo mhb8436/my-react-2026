@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+            const contacts = [
+                {name: "수진", age: 20, city: "서울"},
+                {name: "민준", age: 19, city: "부산"},
+                {name: "지우", age: 21, city: "대구"},
+            ];
+
+            console.log("연락처 전체", contacts)
+
+            // 문제 1 이름이 민준이 객체를 콘솔에 출력해보세요
+            console.log("민준 객체", contacts[1])
+            // 문제 2 이름이 지우인 객체의 나이를 콘솔에 출력해보세요
+            console.log("지우 나이는", contacts[2].age)
+            const c2 = contacts[2]
+            console.log("지우객체", c2) // {name: '지우', age: 21, city: '대구'}
+            console.log("지우객체에서 나이 뽑기", c2.age) // 21
+
+            // contacts (연락처에)에 각자의 정보를 추가해보시고 출력해보세요
+            // 각자의 이름, 각자의 나이, 각자의 살고있는도시 
+            // console.log(contacts)
+            // 배열.push 
+            contacts.push({name: "지훈", age: 25, city:"제주"})
+            // console.log(contacts[0])
+            for(let i=0;i<contacts.length;i++){ // for( 초기값 0; 4 작을때까지; 1씩증가)
+                const person = contacts[i];  // i 0: 수진객체, 1: 민준, 2: 지우, 3: 지훈 
+                console.log(person.name, person.age, person.city) 
+            }
+        
+        </script>
+    </body>
+</html>

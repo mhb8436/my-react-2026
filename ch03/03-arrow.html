@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <script>
+            // 1)  선언식 함수 : 초기에는 
+            function double1(x) {
+                return x * 2;
+            }
+            console.log("선언식", double1(5));
+
+            // 2) 함수를 값처럼 상자에 담기(함수 표현식) 2009년
+            const double2 = function(x) {
+                return x * 2; 
+            }
+            console.log("표현식", double2(5));
+
+            // 3) 화실표 함수 2015년 
+            const double3 = (x) => {
+                return x * 2;
+            }
+            console.log("화살표", double3(5))
+
+            // 4) 화살표 함수 축약형
+            // {}안의 본문이 한줄이고 return 이면 축약형 가능 
+            // (x) => x*2 (return x*2)
+            const double4 = (x) => x*2 ;
+            console.log("화살표 축약형", double4(5))
+
+            // 연습문제 1 아래의 선언식 함수를,  화살표 함수로 만들어보세요
+            function greet1(name) {
+                return `안녕~ ${name}`
+            }
+            // 화살표 함수 이름은 greet2 
+            const greet2 = (name) => `안녕~ ${name}`;
+            console.log(greet2("수진"))
+            // 연습문제 2 아래의 선언식 함수를 화살표 함수로 만들어보세요
+            function add1 (x, y, z) {
+                const sum = x * y + z;
+                const result = sum / 3
+                return result
+            }
+            // 화살표 함수 이름은 add2 
+            const add2 = (x, y, z) => {
+                const sum = x * y + z;
+                const result = sum / 3
+                return result
+            }
+            console.log(add2(3,4,5));
+
+
+            // 연습3  triple : 함수이름, 요걸 화살표 함수를 만들고 인자로 받은 값에 3배를 더해서 반환
+            // 인자값은 한개 x, 리턴 값도 개  
+            // x -> 3 , return 값은 9 
+            const triple = (x) => x * 3  ; // 함축적으로 x에 3을 곱하고 반환해라 
+            console.log(triple(3))
+            
+            const square = (x) => {
+                return x * 4
+                // x * 4 -> 요거는 함수호출 부로 결과 값 반환이 안되요 
+                // 화살표 함수에서 중괄호가 있고, 어떤 값을 반환하고 싶으면 반드시 return 키워드사용
+            }
+            console.log("square" , square(4))
+        </script>
+    </body>
+</html>

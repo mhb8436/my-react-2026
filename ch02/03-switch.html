@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <script>
+            const grade = "B";
+            let message;
+
+            switch(grade) { // switch( 비교할 값 )
+                // grade 가 문자열 "A" 와 같으면 이 case 가 선택 
+                case "A": 
+                    message = "아주 잘했어요";
+                    break; // break 가 없으면 다음 case 가 계속 실행 
+                case "B":
+                    message = "잘했어요"
+                    break;
+                case "C":
+                    message = "보통이에요"
+                    break;
+                default: // "A", "B" "C" 에도 맞지않으면 기본 실행되는역할 else
+                    mesassge = "다시해봐요"
+                    // default 는 보통 마지막에 오기 때문에 break 를 생략 
+            }
+            console.log(message)   
+                     
+            if (grade === "A") {
+                message = "아주 잘했어요";
+            }else if (grade === "B") {
+                message = "잘했어요"
+            }else if (grade === "C") {
+                message = "보통이에요"
+            }else {
+                mesassge = "다시해봐요"
+            }
+            console.log(message)
+        </script>
+    </body>
+</html>
