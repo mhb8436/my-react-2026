@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+            // 1) push  -- 원본 배열을 직접 바꿉니다. 요소추가
+            const fruitsA = ["사과", "바나나"]
+            fruitsA.push("포도") // 원본 
+            console.log(fruitsA) 
+
+            // 2) 스프레드 연산자 ...
+            const fruitsB = ["사과", "바나나"]
+            const added = [...fruitsB, "오렌지"]
+            const added1 = [fruitsB, "오렌지"]
+            console.log("원본은 그대로", fruitsB)
+            console.log("새로 만든것", added)
+            console.log("새로 만든 이상것", added1)
+
+            // 3) 삭제 
+            const removed = fruitsB.filter((x) => x !== "바나나")
+            console.log(removed)
+            const updated = fruitsB.map((x) => x + "!")
+            console.log(updated)
+
+            // 문제 all 이란 배열에 fruits 와 more 을 펴서 합쳐보세요
+            // 결과는 all = ["사과", "바나나", "포도", "귤"]
+            const fruits = ["사과", "바나나"]
+            const more = ["포도", "귤"]
+            const all = [...fruits, ...more] // 여기에 작업하시고
+            console.log("all", all)
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+            const numbers = [1,2,3,4,5,6,7,8,9];
+            let sum = 0;
+            for(let i=0;i<numbers.length;i++){
+                sum = sum + numbers[i]
+            }
+            console.log(sum)
+            /**
+             * reduce 함수 - 배열 항목을 하나씩 돌면서, 최종값으로 모아줍니다. sum
+             * arr.reduce((acc, cur)=>{
+             *  본문  
+             * }, 초기값);
+             * 
+             * acc (accumulator) -> 지금까지 모인 값
+             * cur (current ) => 현재값
+             * return acc + cur ;  지금까지 모인값 + 현재값
+             * 초기값 0 : acc 의 초기값 
+             **/ 
+
+             const sum2 = numbers.reduce((acc, cur)=> {
+                console.log(`모인값: ${acc}, 현재값: ${cur}`);
+                return acc + cur
+             }, 0 )
+             console.log(sum2)
+        </script>
+    </body>
+</html>

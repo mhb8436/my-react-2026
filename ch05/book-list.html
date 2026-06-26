@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script>
+            const books = [
+                {title: "해리포터", page: 320, genre: "판타지"},
+                {title: "1984", page: 328, genre: "SF"},
+                {title: "어린왕자", page: 220, genre: "동화"},
+                {title: "데미안", page: 250, genre: "소설"},
+                {title: "삼체", page: 1000, genre: "SF"},
+                {title: "헤일메리", page: 800, genre: "SF"},
+                {title: "셜록홈즈-시리즈", page: 2020, genre: "추리"},
+            ]
+
+
+            // 1) genre 가 SF 인 소설들 새 배열로
+            const sfbooks = books.filter((b)=>b.genre === "SF")
+            console.log(sfbooks)
+            // 2) SF 소설을 모두 추리고 그들의 제목만 새배열로
+            const sftitles = books.filter((b)=>b.genre === "SF").map((b)=>b.title)
+            console.log(sftitles)
+            // 3) SF 소설 책들의 총 페이지수
+            const sfTotalPages = books.filter((b)=>b.genre === "SF").reduce((acc, cur)=>acc + cur.page, 0)
+            console.log(sfTotalPages)
+            // 4) SF 소설의 책 제목과 페이지수를 새배열로 출력하는데
+            //    모양은 ["1984 (328p)", "해리포터 (320p)"]
+            const sfTitleAndPages = books.filter((b)=>b.genre === "SF").map((b) => `${b.title} (${b.page}p)`)
+            console.log(sfTitleAndPages)
+            // 5) 새로운 책을 넣어서 새로운 배열로 
+            //    제목은 눈물을 마시는새, 페이지수 800, 장르는 판타지를 
+            const books2 = [
+                ...books,
+                {title: "눈물을 마시는새", page: 800, genre: "판타지"}
+            ]
+            console.log(books2)
+
+        </script>
+    </body>
+</html>

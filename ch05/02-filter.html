@@ -1,0 +1,73 @@
+<html>
+    <body>
+        <script>
+            const products = [
+                {name: "아메리카노", price: 3000},
+                {name: "카페라테", price: 4500},
+                {name: "말차티", price: 5000},
+                {name: "케이크", price: 6000},
+                {name: "쿠키", price: 3500},
+            ]
+
+            // 목적 1. products 배열에서 제품가격이 
+            // 4000 원보다 작은 제품만 찾고 싶어요
+            const newProduct = []
+            for(let i=0;i<products.length;i++){
+                if(products[i].price < 4000) {
+                    newProduct.push(products[i])
+                }
+            }
+            console.log(newProduct);
+
+            // filter 사용 인자로 들어간 화살표함수 내에 return 값이 참인 애들만
+            // 새로운 배열로 반환해준다. 
+            const cheap = products.filter((product)=>{
+                return product.price < 4000; // 이 조건이 참인 애들만 고른다 
+            });
+            // console.log(cheap[0]); // filter 결과는 배열 
+            // console.log(cheap[1]); // filter 결과는 배열 
+            // console.log(typeof products)
+            // console.log(typeof {})
+            // console.log(Array.isArray(cheap));
+            // console.log(Array.isArray({}));
+            // arr.filter((항목) => 조건)
+
+            // 문제 1 products 에서 가격이 1000 원보다 작은 제품들을 고르세요
+            const c1 = products.filter((p) => p.price < 1000);
+            console.log("c1", c1);
+            // 문제 2 products 에서 가격 5000원 크거나 같은 제품들을 모두 고르세요
+            const c2 = products.filter((p) => p.price >= 5000);
+            console.log("c2", c2);
+            // 문제 3 products 에서 제품 이름이 수박주스 인것을 찾아보세요 
+            const c3 = products.filter((p) => p.name === "수박주스");
+            console.log("c3", c3);
+
+
+            // arr.find((항목) => 조건)  조건이 맞는것 중에 첫번째 것만 
+            const f1 = products.find((f) => f.price >= 4000);
+            console.log(f1)
+
+            // 문제 4 products 에서 가격이 6000 원인것을 찾아보세요 find 
+            const f2 = products.find((f)=> f.price === 6000);
+            console.log(f2)
+            // 문제 5 products 에서 제품이  말차티 인것을 찾아보세요 find 
+            const f3 = products.find((f)=> f.name === '말차티');
+            console.log(f3)
+            // 문제 6 products 제품명이 오렌지주스인 것을 찾아보세요  find 
+            const f4 = products.find((f)=> f.name === '오렌지주스');
+            console.log(f4)
+
+            console.log("------")
+
+            const menuText= products.filter((p) => p.price >= 4000)
+                .map((p) => `${p.name} 은 ${p.price}원입니다.`)
+            console.log(menuText)
+
+            const m1 = products.filter((p) => p.price > 4000);
+            console.log(m1)
+            const m2 = m1.map((p)=>`${p.name} 은 ${p.price}원입니다.`)
+            console.log(m2);
+
+        </script>
+    </body>
+</html>
