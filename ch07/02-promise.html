@@ -1,0 +1,31 @@
+<html>
+    <script>
+        // https://jsonplaceholder.typicode.com/users/1 공개된 URL 몇가지 더비 API를 제공해주는사이트
+        console.log("1");
+        const fetchPromise = fetch("https://jsonplaceholder.typicode.com/users/1");
+        console.log("2");
+        fetchPromise.then((response)=>{
+            // https://jsonplaceholder.typicode.com/users/1 데이터를 가지고 왔을때
+            // 성공이면 처리해주는 작업을 기술 
+            return response.json();
+        }).then((data)=>{
+            console.log(data);
+        }).catch(()=>{
+            // https://jsonplaceholder.typicode.com/users/1 데이터를 가지고 오다가
+            // 실패 했을떼 처리해는 작업을 기술 
+            console.log("5")
+        });
+        console.log("3");
+        /**
+         * Promise(프로미스) - 나중에 결과를 돌려줄께 라는 약속을 담은 객체 
+         * "나중에 결과를 돌려줄께"
+         * 시간이 걸리는 일(fetch, 파일 읽기 , 디비에서 직접 읽기 ) 즉 결과를 받로 안오는 작업
+         * Promise 는 그 결과가 언제온다 라는 약속(Promise)를 객체 돌려줘요 
+         * 
+         * 상태가 3가지 
+         *   pending : 아직 진행 중(기다리는 중)
+         *   fulfilled : 성공, 작업이 끝났어 프로미스객체.then() 함수가 실행됩
+         *   rejected : 실패, 프로미스객체.catch()함수가 실행 입니다. 
+         **/
+    </script>
+</html>

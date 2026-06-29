@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <script>
+            const fruits = ["사과", "바나나"];
+            const more = ["포도", "귤"]
+
+            // 문제 1 : fruits, more 를 합쳐주세요 
+            // ["사과", "바나나", "포도", "귤"]
+            const all = [...fruits, ...more];
+            console.log(all);
+
+            // 문제2 fruits 에 "체리" 만 추가해주세요
+            // ["사과" "바나나", "체리"]
+            const withCherry = [...fruits, "체리"]
+
+            const user = {name: "수진", age: 20}
+            // 문제 3 : older 변수를 반들고 
+            // 수진의 나이를 30로 증가시켜 주세요
+            const order = {...user, age: 30}
+
+            function sum(...nums) {
+                // nums 데이터 타입은 array
+                // 1,2,3,4,5,6,7,8,9,10 => [1,2,3,4,5,6,7,8,9,10]
+                // ...nums 
+                return nums.reduce((acc, n) => acc+ n, 0); // 55
+            }
+            console.log(sum(1,2,3,4,5,6,7,8,9,10))
+
+            // 레스트 
+            const scores = [90, 80, 76, 30,100]
+            const [top1, top2, ...rest] = scores;
+            // top : 90 
+            // rest = [80, 76, 30, 100]
+            console.log(top1, top2, rest)
+        </script>
+    </body>
+</html>

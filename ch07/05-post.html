@@ -1,0 +1,26 @@
+<html>
+    <script>
+        // 문제 4 05-post.html 만드신 뒤에 
+        // https://jsonplaceholder.typicode.com/posts
+        // 게시글을 가지와서  posts 담고
+        // posts 변수를 돌면서 (forEach) title, body console.log 로 출력해보세요
+        // loadPosts 
+
+        async function loadPosts() {
+            const url = "https://jsonplaceholder.typicode.com/posts"
+            try{
+                console.log("==== 게시글 불러오기 ====")
+                const resp = await fetch(url);
+                const posts = await resp.json();
+                
+                posts.forEach((p)=> {
+                    console.log(`${p.title} - ${p.body}`);
+                });
+            }catch(e){
+                console.error(e);
+            }
+        }
+
+        loadPosts();
+    </script>
+</html>

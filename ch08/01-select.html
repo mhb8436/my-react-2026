@@ -1,0 +1,52 @@
+<html> <!-- 문서 요소 전체를 감싼다. -->
+    <head> <!-- 제목 인코딩 정보, 스타일 등 화면 밖의 정보 관리-->
+        <title>요소 선택하기</title> <!-- 제목 정의 -->
+        <style> 
+            body { font-family: sans-serif; font-size: 16px ;padding: 24px}
+            .box { font-size: 28px; background-color: red;}
+            #name {font-size: 36px; background-color: blue;}
+        </style> <!-- 디자인 요소 정의(색 패딩, 마진) CSS 문법 정의 -->
+        <script></script> <!-- 자바스크립트 코드를 넣는다 -->
+    </head>
+    <body>
+        <h1>안녕하세요 오늘은 월요일입니다.</h1> <!-- h1 제목 (h1 -> h6 )-->
+        <h6>안녕하세요 오늘은 비가 올 수 있데요</h6>
+        <p id="message">오늘 점심은 <strong>도시락</strong>을 맛있게 먹어요 <br><em>점심시간</em>은 12:30 분부터지만 우리는 15분 부터 먹어요</p>
+         
+        <a href="https://www.naver.com"> 네이버 </a> <!-- a태그는 링크 다른 페이지로 이동-->
+        <br>
+       
+        <label for="name">이름</label>
+        <input id="name" type="text" placeholder="이름을 입력하세요"/>
+        <button id="greetBtn" type="button">인사하기</button>
+        <div class="box"> <!-- 블록을 지정 (한줄 전체 차지)-->
+            <p>내용</p>
+        </div>
+        <span> <!-- 인라인 영역에 적용할 때 -->
+            <p>스팬내용</p>
+        </span>
+        <ul id="list">
+        </ul>
+        <script>
+            const message = document.querySelector("#message");
+            const box = document.querySelector(".box");
+            const nameInput = document.querySelector("#name");
+            console.log(message);
+            message.textContent = "점심은 국밥이 어때요";
+            message.style.color = "orange";
+            message.style.fontSize = "40px";
+            const list = document.querySelector("#list")
+            const greetBtn = document.querySelector("#greetBtn");
+            greetBtn.addEventListener("click", ()=>{
+                const name = nameInput.value; // name input에 입력된 값이
+                console.log("입력된 이름", name)
+                message.textContent = `안녕하세요~ ${name}님`
+                // 목록에 이 내용추가
+                const li = document.createElement("li");
+                li.textContent = `안녕하세요~ ${name}님`
+                list.append(li)
+            });
+
+        </script>
+    </body>
+</html>

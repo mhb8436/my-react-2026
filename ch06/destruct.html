@@ -1,0 +1,68 @@
+<html>
+    <body>
+        <script>
+            const colors = ["red", "green", "blue", "orange"];
+            //문제 1 colors red 와 green 을 꺼내서 출력해보세요
+            // const red = colors[0]; 
+            // console.log(red)
+            // const green = colors[1];
+            // console.log(green)
+            
+            // 배열의 구조분해 할당 
+            const [red, green, blue] = colors;
+            console.log(red, green, blue);
+
+            const [first, second, third] = colors;
+            console.log(first, second, third)
+            
+            const nums = [10, 20, 30, 40, 50]
+            // 연습문제 1 
+            // 배열의 구조분해 할당으로 a, b, c 에 10과 20, 30 넣어보세요 
+            const [a, ,c] = nums;
+            console.log(a, c);
+
+            // rest  a1 를 뺀 나머지 배열이 들어가 있습니다. 
+            const [a1, ...rest] = nums;
+            console.log(...rest, rest)
+
+            const orders = ["아메리카노", "카페라테", "녹차", "케이크"]
+
+            // 문제 1 첫번째 주문과 두번째 주문을 출력해보세요
+            const [firstOrder, secondOrder] = orders
+            // 문제 2 첫번째 주문과 마지막 주문을 출력해보세요 
+            const [firstOrder1,,, lastOrder] = orders
+            // 문제 3 첫번째 주문과 첫번째 주문을 뺀 나미지 주문 모두를 배열로 출력해보세요
+            const [firstOrder2, ...restOrders] = orders;
+            
+            // 객체 구조 분해 할당
+            const user = {name : "수진", age: 22, city: "서울"}
+            // 문제 1 city 도 한번 꺼내서 출력해보세요 
+            const {name, age, city, hobby = "없음"} = user;
+            console.log(name, age, city, hobby)
+            
+            const member = {
+                memberName: "민준", grade:"골드", point: 12000, favorite: "카페라떼"
+            }
+            // 문제 1 민준, 골드 
+            const {memberName, grade} = member;
+            // 문제 2 포인트, 즐겨찾는 음료를 변수 담아서 출력해보세요 
+            const {point, favorite} = member
+            const receipt = {drink :"아메리카노", price: 3000};
+            // 문제 1 drink, price, 및 tip 을 출력해보세요 receipt 에 키가 없는 경우 기본값은 0 
+            const {drink, price, tip=0} = receipt;
+
+            // 주문 접수 시에 객체 구조분해할당으로 객체를 받았습니다.
+            function takeOrder({drink, size = "Regular"}) {
+                return `${size} ${drink} 주문 접수`;
+            }
+            // 기본적으로 요렇게 사용되었습니다. 
+            function takeOrder2(odrder) {
+                return `${order.size} ${order.drink} 주문 접수`; // <- order 라는 매개변수에서 바로 구조분해
+            }
+            const order = {drink:"수박주스", size: "Large"}
+            console.log(takeOrder(order));
+            console.log(takeOrder2(order));
+
+        </script>
+    </body>
+</html>

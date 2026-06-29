@@ -1,0 +1,42 @@
+<html>
+    <script>
+        // https://jsonplaceholder.typicode.com/users
+        
+        async function loadUsers() {
+            try{
+                const url = "https://jsonplaceholder.typicode.com/users";
+                console.log("=== 사용자 목록을 불러 옵니다. ====")
+                const response = await fetch(url);
+                const users = await response.json();
+                console.log("받아온 전체 데이터:", users)
+                console.log(`총 ${users.length}명 유저가 발견되었습니다.`);
+
+                // users 가 배열이기 때문에 
+                // 문제 1 각각의 유저를 돌면서 유저 이름, 유지 이메일을 출력해보세요 forEach 사용해서
+                users.forEach((u)=> {
+                    console.log(`${u.name} - ${u.email}`)
+                })
+                // 문제 2 유저의 이름과 회사이름을 같이 출력해보세요 
+                users.forEach((u) => {
+                    console.log(`${u.name} - ${u.company?.name}`)
+                })
+                // 문제 3 유저 id가 5보다 큰 유저를 대상으로 유저이름과 전화번호를 출력해주세요
+                //       포멧은 유저이름(전화번호) > 배열로 
+                const nameAndPhones = users.filter((u)=>u.id>5).map((u)=> `${u.name}(${u.phone})`)
+                console.log(nameAndPhones);
+
+                // 문제 4 05-post.html 만드신 뒤에 
+                // https://jsonplaceholder.typicode.com/posts
+                // 게시글을 가지와서  posts 담고
+                // posts 변수를 돌면서 (forEach) title, body console.log 로 출력해보세요
+                // loadPosts 
+
+            }catch(e){
+                // try - catch 사이에 예외가 발생하면 여기서 처리
+                console.error(e)
+            }
+        }
+
+        loadUsers();
+    </script>
+</html>
