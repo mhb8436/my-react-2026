@@ -6,6 +6,8 @@ import './App.css'
 import Greeting from './components/Greeting'
 import GoodBye from './components/GoodBye'
 import ProfileCard from './components/ProfileCard'
+import ProjectCard from './components/ProjectCard';
+import MovieCard from './components/MovieCard';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,6 +36,21 @@ function App() {
             name={myName}
             role="프론트앤드개발자"
             hobbies={["커피","러닝","사진"]}
+            skills={["HTML", "CSS", 
+              "JAVASCRIPT"]}
+          />
+
+          <ProjectCard 
+            name={"오늘할일앱"}
+            desc="오늘할을을내일로미루자"
+            todos={["참교육","리액트공부","자바스크립트복습"]}            
+          />
+
+          <MovieCard 
+            title={"헤일메리"}
+            year={2026}
+            star={5}
+            genre={["SF", "드라마", "아동"]}
           />
         </sectoin>
       </div>

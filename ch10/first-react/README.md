@@ -1,16 +1,34 @@
-# React + Vite
+# component and props
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## 문제 1
 
-Currently, two official plugins are available:
+ProjectCard 
+    - name : 문자열 (예시 : "To Do 앱 ")
+    - desc : 문자열 (예시 : "할일 관리 미니 프로젝트 ")
+    - todos : 배열 (예시 : ["독서", "점심" , "저녁먹기"])
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ProjectCard 컴포넌트 만들고
+App.jsx 에서 이 컴포넌트를 호출해보세요 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ProfileCard를 참고해서 만들어보세요 
 
-## Expanding the Oxlint configuration
+1. components/ProjectCard.jsx
+2. 여기에 내용을 채우고
+3. App.jsx 가서 <ProjectCard />
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+## 문제 2
+MovieCard 컴포넌트를 만들고
+    - title :  예시) "인터스텔라"
+    - year : 년도 예시) 2026 
+    - star : 별점 예시) 1- 5 숫자 
+    - genre : 배열 ["SF", "드라마"]
+
+MovieCard 컴포넌트를 만들고
+App.jsx 불려서 써보세요 
+
+
+## 문제 3 
+
+
