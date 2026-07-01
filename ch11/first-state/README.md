@@ -1,16 +1,15 @@
-# React + Vite
+## useState 연습문제
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+### 문제 1
+- StepCounter 컴포넌트를 만들고
+- 시작값은 0 부터 ,  2씩 증가, 2씩 감소하는 버튼을 만들고
+- 증가되는 숫자를 출력 해보는겁니다. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 문제 2
+- DoubleCounter 컴포넌트를 만들고
+- 시작값은 1로 두고  x2  버튼을 누르면 2배 씩 증가
+- 1 -> 2 -> 4 -> 8 -> 16 -> 32 .. 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
