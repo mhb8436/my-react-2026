@@ -3,7 +3,8 @@ import { useParams, useNavigate, Link } from "react-router-dom"
 import { findProductById } from "../data/products"
 
 export default function ProductDetail() {
-    const { id } = useParams();  // path="/products/:id" 와 같이 이름이 들어갔을 경우 id 로 param을 가지고옴
+    const { id } = useParams();  
+    // path="/products/:id" 와 같이 이름이 들어갔을 경우 id 로 param을 가지고옴
     const navigate = useNavigate();
 
     const product = findProductById(id); // id String 
