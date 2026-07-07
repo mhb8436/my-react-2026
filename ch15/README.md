@@ -31,3 +31,36 @@ const [posts, setPosts ] = useState([])
 
 // 이런 로직을 모아서 한군데서 처할 수 있게 만든 함수가 커스텀 훅이라고 
 ```
+
+
+# CreateContext 퀴즈
+UserContext 처럼 멀리 떨어진 두개의 컴포넌트가 같은 인사말을 공유할 수 있께 만들어보세요
+
+- 한쪽 : 인사말 입력
+- 다른쪽: 인사말 표시
+- props 로 전달하지 말고 Context 연결
+
+context/GreetingContext.jsx - Context, Provider, useGreeting 
+components/GreetingForm.jsx - 인사말을 입력 
+components/GreetingCard.jsx - 인사말이 표시 
+App.jsx - 수정 -> GreetingProvider 로 감싸기 
+
+```javascript
+    // GreetingContext.jsx
+    const [greeting, setGreeting] = useState("안녕하세요")
+
+    // App.jsx
+    <Layout>
+        <GreetingForm/>
+        <GreetingCard/>
+    </Layout>   
+     
+    <GreetingProvider>
+        <Layout/>    
+    </GreetingProvider>
+
+```
+결과 
+[입력화면] -> 안녕하세요 : GreetingForm -> UserHeader.jsx
+
+"안녕하세요" - GreetingCard   -> UserGreeting.jsx 

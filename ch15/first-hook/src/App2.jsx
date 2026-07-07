@@ -12,6 +12,10 @@ import UserHeader from './components/UserHeader';
 import UserGretting from './components/UserGreeting';
 import { UserProvider } from './context/UserContext'
 
+import GreetingCard from './components/GreetingCard';
+import GreetingForm from './components/GreetingForm';
+import { GreetingProvider } from './context/GreetingContext';
+
 function Layout() {
   const { isDark } = useTheme();
 
@@ -27,6 +31,12 @@ function Layout() {
         <div className='gap'></div>
         <UserGretting/>
       </section>
+      <section>
+        <h2>인사말 전달 컴포넌트</h2>
+        <GreetingForm/>
+        <div className='gap'></div>
+        <GreetingCard/>
+      </section>
     </div>
   )
 }
@@ -35,7 +45,9 @@ function App() {
   return (
     <ThemeProvider>
       <UserProvider>
+        <GreetingProvider>
         <Layout/>
+        </GreetingProvider>
       </UserProvider>
     </ThemeProvider>
   )
