@@ -13,9 +13,14 @@ export function usePosts() {
             const data = await getPosts()
             setPosts(data);
         }catch(e){
-            setError(e.message)
+            setError(e.message)            
         }finally{ // try, catch 무조건 호출 
             setLoading(false)
         }
     }
+
+    useEffect(()=>{
+        load();
+    }, []);
+    return {posts, loading, error}
 }
