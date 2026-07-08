@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getPosts } from '../api/posts'
+import { getPosts,createPost, updatePost, deletePost } from '../api/posts'
 
 export function usePosts() {
     const [posts, setPosts] = useState([])
@@ -22,5 +22,30 @@ export function usePosts() {
     useEffect(()=>{
         load();
     }, []);
-    return {posts, loading, error}
+
+    // 추가 함수
+    async function add(post) {
+        setError(null)
+        const created = await createPost(post);
+        setPosts((prev)=> [...created, prev])
+    }
+
+    async function edit(id, post) {
+        setError(null)
+        const data = await updatePost(id, post)
+        setPosts((prev) => prev.map(
+            (p) => (p.id === id ? {...p,...post}: p)
+            ) // end of map 
+        ) // end of setPosts
+
+    }
+
+    async function remove(id) {
+        setError(null)
+        await deletePost(id)
+        setPosts((prev) => prev.filter((p) => p.id !== id))
+    }
+
+
+    return {posts, loading, error, add, edit, remove}
 }

@@ -6,6 +6,17 @@ import PostList  from './components/PostList'
 function App() {
   // posts : 게시글 배열, loading : 로딩여부, error : 에러여부 
   const {posts, loading, error } = usePosts();
+  const [editingPost, setEditingPost] = useState(false)
+
+  async function handleSubmit(data) {
+    try{
+      if(editingPost) {
+        
+      }
+    }catch(e){
+
+    }
+  }
 
   return (
     <div>
