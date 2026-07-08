@@ -10,7 +10,6 @@ export function usePosts() {
         try{
             setLoading(true)
             setError(null)
-
             const data = await getPosts()
             setPosts(data);
         }catch(e){
