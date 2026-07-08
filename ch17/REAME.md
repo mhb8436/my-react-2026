@@ -1,0 +1,2 @@
+https://dhcihfnydvtnpsyvyqzz.supabase.co
+sb_publishable_IaA7awIgSW344VVJp4Axfw_6LMhAnFj
