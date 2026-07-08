@@ -33,8 +33,11 @@ export async function createPost(post){
             )
         }
     );
+    console.log("createPost", post)
     if(!res.ok) throw new Error('글을 저장하지 못했습니다.')
+    console.log("createPost response", res) 
     const data = await res.json();
+    
     return data;
 }
 
@@ -58,7 +61,7 @@ export async function updatePost(id, post) {
 }
 
 export async function deletePost(id) {
-    const res = fetch(
+    const res = await fetch(
         `${SUPABASE_URL}/rest/v1/posts?id=eq.${id}`,
         {
             method: "DELETE",
