@@ -16,5 +16,6 @@ export async function getPosts() {
         {headers: headers()}
     )
     if(!response.ok) throw new Error(`글 목록을 불러오지 못했어요`)
-    return response.json();
+    const data = await response.json()
+    return data;
 }
