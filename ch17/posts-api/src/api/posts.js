@@ -26,19 +26,17 @@ export async function createPost(post){
         {
             method: "POST",
             headers: headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Prefer: 'return=representation',
             }),
             body: JSON.stringify( // java 객체를 -> JSON
                 {title: post.title, body:post.body, user_id: 10}
             )
         }
     );
-    console.log("createPost", post)
     if(!res.ok) throw new Error('글을 저장하지 못했습니다.')
-    console.log("createPost response", res) 
     const data = await res.json();
-    
-    return data;
+    return data[0]; // data = [{}] data[0] = {}
 }
 
 export async function updatePost(id, post) {
@@ -48,7 +46,8 @@ export async function updatePost(id, post) {
         {
             method: 'PATCH',
             headers: headers({
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Prefer: 'return=representation',
             }),
             body: JSON.stringify( // obj -> json
                 {title: post.title, body:post.body}

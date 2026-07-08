@@ -27,7 +27,8 @@ export function usePosts() {
     async function add(post) {
         setError(null)
         const created = await createPost(post);
-        setPosts((prev)=> [...created, prev])
+        // created : {title:'..', body:'..'}
+        setPosts((prev)=> [created, ...prev])
     }
 
     async function edit(id, post) {
