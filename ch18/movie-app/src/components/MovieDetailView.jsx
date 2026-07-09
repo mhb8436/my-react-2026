@@ -16,7 +16,7 @@ export default function MovieDetailView({ movie }) {
                     }
                 </div>
                 <div className='detail-body'>
-                    <h1>{movie.title}</h1>
+                    <h1>{movie.Title}</h1>
                     <p className='muted'>
                         {movie.Year}
                         {movie.Genre}
