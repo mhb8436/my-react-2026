@@ -38,7 +38,14 @@ function PostForm({ editingPost, onSubmit, onCancel }) {
                 onChange={(e)=>setBody(e.target.value)}
             />  
             <div className='button-row'>
-                <button type="submit">{isEditing ? '수정' :'추가'}</button>
+                <button type="submit">{isEditing ? '수정' :'추가'}</button>            
+                {
+                    isEditing && (
+                        <button type="button" 
+                            className='secondary' 
+                            onClick={onCancel}>취소</button>
+                    )
+                }
             </div>
         </form>
     )

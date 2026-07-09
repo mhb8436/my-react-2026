@@ -27,7 +27,7 @@ export async function createPost(post){
             method: "POST",
             headers: headers({
                 'Content-Type': 'application/json',
-                Prefer: 'return=representation',
+                Prefer: 'return=representation'                
             }),
             body: JSON.stringify( // java 객체를 -> JSON
                 {title: post.title, body:post.body, user_id: 10}
