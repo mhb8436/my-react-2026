@@ -15,3 +15,10 @@ npm run dev
 
 # 키 발급 받기 omdb 
 https://www.omdbapi.com/apikey.aspx
+
+# 키설정하기
+```bash
+.env
+VITE_OMDB_KEY=<발급받으신키>
+
+```
