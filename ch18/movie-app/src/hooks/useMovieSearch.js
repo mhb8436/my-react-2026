@@ -31,3 +31,4 @@ export function useMovieSearch() {
     }
     return {query, setQuery, results, loading, error, searched, search}
 }
+
