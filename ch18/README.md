@@ -22,3 +22,15 @@ https://www.omdbapi.com/apikey.aspx
 VITE_OMDB_KEY=<발급받으신키>
 
 ```
+
+# 디렉토리 구조
+movie-app
+    src
+        api
+        components
+        context
+        hooks
+        pages
+        App.jsx 
+        main.jsx
+        index.css
