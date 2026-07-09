@@ -24,6 +24,7 @@ VITE_OMDB_KEY=<발급받으신키>
 ```
 
 # 디렉토리 구조
+```bash
 movie-app
     src
         api
@@ -49,3 +50,4 @@ movie-app
         App.jsx 
         main.jsx
         index.css
+```
