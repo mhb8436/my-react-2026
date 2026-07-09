@@ -23,9 +23,11 @@ export function useMovieSearch() {
             const data = await searchMovies(trimmed);
             setResults(data)
         }catch(e){
-
+            setError(e.message)
         }finally{
-
+            setLoading(false)
+            setSearched(false)
         }
     }
+    return {query, setQuery, results, loading, error, searched, search}
 }
