@@ -4,17 +4,18 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home   from './pages/Home'
 import MovieDetail from './pages/MovieDetail'
+import { FavoritesProvider } from './context/FavoritesContext'
 
 function App() {
 
   return (
-    <div>
+    <FavoritesProvider>      
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/movie/:id" element={<MovieDetail/>}/>
       </Routes>
-    </div>
+    </FavoritesProvider>
   )
 }
 
