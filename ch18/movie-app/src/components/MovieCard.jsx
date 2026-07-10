@@ -9,12 +9,7 @@ export default function MovieCard({movie}) {
     function handleHeart(e) {
         e.preventDefault(); // 카드가 링크로 감싸져 있어서, 상세화면으로 넘어가는것을 방지
         e.stopPropagation(); // 클릭이 카드로 번지는것을 방지
-        toggle({
-            imdbID: movie.imdbID,
-            Title: movie.Title,
-            Year: movie.Year,
-            Poster: movie.Poster
-        }); 
+        toggle(movie); 
     }
     return (
         <Link to={`movie/${movie.imdbID}`} className='movie-card'>
