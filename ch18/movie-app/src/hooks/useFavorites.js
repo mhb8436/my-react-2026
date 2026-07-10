@@ -38,4 +38,14 @@ export function useFavorites() {
     function remove(id) {
         setFavorites((prev) => prev.filter((movie) => movie.imdbID !== id));
     }
+
+    function toggle(movie) {
+        if(isFavorite(movie.imdbID)) {
+            remove(movie.imdbID)
+        }else{
+            add(movie)
+        }
+    }
+
+    return { favorites, isFavorite, add, remove, toggle}
 }
