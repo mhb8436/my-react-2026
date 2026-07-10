@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home   from './pages/Home'
 import MovieDetail from './pages/MovieDetail'
 import { FavoritesProvider } from './context/FavoritesContext'
+import Favorites from './pages/Favorites'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/movie/:id" element={<MovieDetail/>}/>
+        <Route path="/favorites" element={<Favorites/>}/>
       </Routes>
     </FavoritesProvider>
   )
