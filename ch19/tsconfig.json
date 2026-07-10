@@ -8,5 +8,5 @@
     "skipLibCheck": true,
     "moduleDetection": "force"
   },
-  "include": ["ch01/**/*.ts", "ch02/**/*.ts"]
+  "include": ["**/*.ts", "*.ts"]
 }
