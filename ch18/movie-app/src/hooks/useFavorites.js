@@ -21,4 +21,21 @@ export function useFavorites() {
     useEffect(()=>{
         localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites))
     }, [favorites]); 
+
+    function isFavorite(id) {
+        // favorites 배열  안에 id 를 가진 movie 가 하나라도 있니?  true, false
+        return favorites.some((movie) => movie.imdbID === id);
+    }
+
+    function add(movie) {
+        // movie 를 favorites 추가할때 무조건 추가하면될까요? 기존에 id 동일한게 있으면 안되니까
+        setFavorites( (prev) => {
+            if (prev.some((m) => m.imdbID === movie.imdbID)) return prev; // 아래 로직은 실행
+            return [...prev, movie]; // 원본은 건드리지 않고 새 배열봔환  // 위줄에서 false가 되서 실행이 안될경우 이줄 실행 
+        });
+    }
+
+    function remove(id) {
+        setFavorites((prev) => prev.filter((movie) => movie.imdbID !== id));
+    }
 }
