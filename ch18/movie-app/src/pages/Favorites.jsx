@@ -4,7 +4,7 @@ import {useFavoritesContext} from '../context/FavoritesContext';
 
 export default function Favorites() {
      const { favorites } = useFavoritesContext();
-
+    
      return (
         <div className='container'>
             <h1>내가 좋아하는 영화</h1>

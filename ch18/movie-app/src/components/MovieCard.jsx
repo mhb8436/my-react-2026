@@ -12,7 +12,7 @@ export default function MovieCard({movie}) {
         toggle(movie); 
     }
     return (
-        <Link to={`movie/${movie.imdbID}`} className='movie-card'>
+        <Link to={`/movie/${movie.imdbID}`} className='movie-card'>
             <div className='poster'>
                 {
                 hasPoster ? 
