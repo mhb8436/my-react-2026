@@ -46,6 +46,6 @@ export function useFavorites() {
             add(movie)
         }
     }
-
+    
     return { favorites, isFavorite, add, remove, toggle}
 }
