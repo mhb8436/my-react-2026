@@ -30,3 +30,7 @@ const products : Product[] = [
     coffee,
     {id: 'p02', name:"앱코 A87K", price: 100000, isStock: true}
 ]
+for(const p of products) { 
+    // p 는 Product 로 추론되기 때문데 p 만 눌러도 id, name, price 바로 알 수 있어요
+    console.log(`${p.name} , ${p.price}`)
+}
