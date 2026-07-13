@@ -23,3 +23,18 @@ function salePrice(product: Product | undefined): string {
 console.log(salePrice(headphone))
 console.log(salePrice(undefined))
 
+// 연습문제 1 
+// 1) User 라는 인터페이스를 만드는데요 id 문자열, nickname 도 문자열
+// nickname 은 있어도 되고 없어도 되요
+interface User {
+    id: string
+    nickname?: string
+}
+// 2) showNickname 이라는 함수를 만들고 매개변수(함수의 인자)로 
+//    User 타입과 undefined을 받을 수 있어요 
+//    이 함수의 리턴 결과로 user 의 nickname 이 없으면 '익명' 을 반환해줘요 
+function showNickname(user : User | undefined) {
+    return user?.nickname ?? '익명'
+}
+console.log(showNickname({id: "user-01", nickname: "이지훈"}))
+console.log(showNickname(undefined))
