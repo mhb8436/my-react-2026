@@ -28,3 +28,16 @@ function updateProduct(id: string, patch: Partial<Product>) {
 console.log(previewProduct, draft);
 updateProduct('p01', {price: 10000}); //  name, category
 console.log(previewProduct, draft);
+
+
+// 연습문제 
+// 연습 1
+// Product 에서 id, price, category 만 뽑은 ProductPriceInfo 타입을 만들고
+// 객체를 선언해보세요
+
+type ProductPriceInfo = Pick<Product,'id' | 'price' | 'category'>
+const priceInfo : ProductPriceInfo = {
+    id: "p01", price: 100, category: "electronics"
+}
+
+// Record 

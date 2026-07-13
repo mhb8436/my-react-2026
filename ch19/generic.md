@@ -49,6 +49,7 @@ function first<T>(items: T[]): T | undefined {
 }
 ```
 | 표기 | 읽는 법 |
+|-----|-------|
 | `<T>` | "이 함수는 타입 빈간 T를 하나 씁니다. (선언) |
 | `items: T[]` | "T의 배열을 받겠습니다. " |
 | `:T \| undefined` | "T 하느를 또는 undefined 를 돌려줍니다. |
