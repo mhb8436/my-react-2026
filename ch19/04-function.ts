@@ -1,4 +1,4 @@
-function formatPrice(won: number):string {
+function formatPrice(won: number) :string {
     return `${won} 원`;
 }
 console.log(formatPrice(12000));
@@ -11,3 +11,15 @@ function discount(price: number, rate: number = 0.1) : number {
 console.log('10%할인 가격', formatPrice(discount(212300)))
 // 문제 1 345100 을 20% 할인 받은 가격을 출력해보세요
 console.log('20%할인 가격', formatPrice(discount(345100, 0.2)))
+
+// 연습문제 1 
+// inStock 이라는 매개변수에 true 들어오면 '재고있음'을 반환해주고
+// isStock 에 false 들어오면 '재고없음'을 반환해주는 stockLabel 함수를
+// 만들어보세요 
+
+// 연습문제 2
+// baseFree 기본값이 3000 원, shippingFee 함수를 만들어보세요 
+// extraKg(추가 kg)더해질 때마다 kg 당 500원씩 더합니다. 
+
+
+
