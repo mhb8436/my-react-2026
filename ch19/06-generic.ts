@@ -19,3 +19,12 @@ console.log(b)
 function first1(items: any[]) { // java Object
     return items[0]
 }
+
+
+// 제네릭을 받은 타입 그대로 감싸는 함수도 만들어 봅니다. 
+function box<T>(value: T): {value:T}{
+    return {value}
+}
+
+console.log(box("핸드폰"))
+console.log(box<number>(12000))
