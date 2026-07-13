@@ -1,6 +1,7 @@
 export type Category = 'electronics' | 'fashion' | 'home' | 'book' | 'food';
 
-export const CATEGORY_LABELS : Record<Category, string> = {
+export const CATEGORY_LABELS 
+    : Record<Category, string> = {
     electronics: "전자기기",
     fashion : "패션",
     home: "리빙",
