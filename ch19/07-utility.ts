@@ -40,4 +40,11 @@ const priceInfo : ProductPriceInfo = {
     id: "p01", price: 100, category: "electronics"
 }
 
-// Record 
+// Record<키타입, 값타입> = 
+const labels: Record<Category, string> = {
+    electronics: "전자기기", 
+    fashion: "패션",
+    book: "도서"
+}
+console.log(labels)
+// const labels2: { [key:string] : string} = {...}
