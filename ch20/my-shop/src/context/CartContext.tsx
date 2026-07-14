@@ -26,7 +26,7 @@ function cartReducer(state : CartItem[] , action: CartAction) :  CartItem[] {
         case 'SET_QUANTITY': { // 카트에서 동일 상품 수량업데이트
             return state.map(
                 (it) => it.product.id === action.productId
-                    ? {...it, quantity: Math.min(action.quantity + 1, it.product.stock)}
+                    ? {...it, quantity: Math.min(action.quantity, it.product.stock)}
                     : it
             );
         }
@@ -35,3 +35,15 @@ function cartReducer(state : CartItem[] , action: CartAction) :  CartItem[] {
         }
     }    
 }
+
+export interface CartContextValue {
+    items : CartItem[];
+    addItem: (product: Product) => void;
+    removeItem : (productId: string) => void;
+    setQuantity : (productId: string, quantity: number) => void;
+    clear: () => void
+    totalCount: number;
+    totalPrice: number;
+}
+
+export const CartContext = createContext<CartContextValue | null>(null);
