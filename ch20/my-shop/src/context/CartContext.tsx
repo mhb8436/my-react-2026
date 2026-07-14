@@ -1,4 +1,4 @@
-import {createContext, useReducer } from 'react'
+import {createContext, useReducer, type ReactNode } from 'react'
 import type { CartItem, CartAction, Product } from '../types'
 
 function cartReducer(state : CartItem[] , action: CartAction) :  CartItem[] {
@@ -47,3 +47,17 @@ export interface CartContextValue {
 }
 
 export const CartContext = createContext<CartContextValue | null>(null);
+
+export function CartProvider({ children } : {children: ReactNode}) {
+    const [items, dispatch] = useReducer(cartReducer, []);
+    const value : CartContextValue = {
+        items,
+        addItem : (product) => dispatch({type:  'ADD', product: product}),
+        removeItem : (productId) => dispatch({type: 'REMOVE', productId: productId}),
+        setQuantity: (productId, quantity) => dispatch({type: 'SET_QUANTITY', productId, quantity}),
+        clear: () => dispatch({type: 'CLEAR'}),
+        totalCount: items.reduce((sum, it) => sum + it.quantity, 0),
+        totalPrice: items.reduce((sum,it) => sum + it.product.price * it.quantity, 0)
+    }
+    return <CartContext.Provider value={value}>{children}</CartContext.Provider>
+}
