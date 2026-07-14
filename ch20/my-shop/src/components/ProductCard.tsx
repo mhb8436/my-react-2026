@@ -1,6 +1,7 @@
 import type {Product} from '../types';
 import { CATEGORY_LABELS } from '../types'
 import { formatPrice } from '../lib/format'
+import { Link } from 'react-router-dom'
 
 interface ProductCardProps {
     product: Product
@@ -10,7 +11,7 @@ export default function ProductCard({ product } : ProductCardProps) {
     const soldOut = product.stock === 0; 
 
     return (
-        <div className='product-card'>
+        <Link className='product-card' to={`/products/${product.id}`}>
             <img className='thumb' src={product.image} alt={product.name} />
             <div className='body'>
                 <span className='p-cat'>{CATEGORY_LABELS[product.category]}</span>
@@ -22,6 +23,6 @@ export default function ProductCard({ product } : ProductCardProps) {
                     <span className='p-price'>{formatPrice(product.price)}</span>
                 )}
             </div>
-        </div>
+        </Link>
     )
 }
