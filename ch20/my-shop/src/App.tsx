@@ -4,16 +4,19 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import NotFound from './pages/NotFound';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout/>}>
-        <Route path="/" element={<Home/>} />
-        <Route path="/products/:id" element={<ProductDetail/>} />
-        <Route path="*" element={<NotFound/>} />
-      </Route>
-    </Routes>
+    <CartProvider>
+      <Routes>
+        <Route element={<Layout/>}>
+          <Route path="/" element={<Home/>} />
+          <Route path="/products/:id" element={<ProductDetail/>} />
+          <Route path="*" element={<NotFound/>} />
+        </Route>
+      </Routes>
+    </CartProvider>
   )
 }
 
