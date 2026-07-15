@@ -31,6 +31,13 @@ export default function CartItem({item} : CartItemProps) {
                 > + </button>
             </div>
             <div className='line-total'>{formatPrice(product.price * quantity)}</div>
+            <button
+                type='button'
+                className='btn btn-ghost btn-sm'
+                onClick={() => removeItem(product.id)}
+            >
+                삭제
+            </button>
         </div>
     )
 }
