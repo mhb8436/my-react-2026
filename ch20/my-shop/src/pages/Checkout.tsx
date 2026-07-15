@@ -27,7 +27,7 @@ export default function Checkout() {
         )
     }
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.SubmitEvent) => {
 
     }
 
@@ -47,6 +47,58 @@ export default function Checkout() {
                         onChange={(e) => setForm((prev) => ({...prev, recipient: e.target.value})) }
                     />
                 </div>
+                <div className='field'>
+                    <label htmlFor="phone">전화번호</label>
+                    <input
+                        id="phone"
+                        name="phone"
+                        type="text"
+                        value={form.phone}
+                        onChange={(e) => setForm((prev) => ({...prev, phone: e.target.value})) }
+                    />
+                </div>
+                <div className='field'>
+                    <label htmlFor="zipcode">우편번호</label>
+                    <input
+                        id="zipcode"
+                        name="zipcode"
+                        type="text"
+                        value={form.zipcode}
+                        onChange={(e) => setForm((prev) => ({...prev, zipcode: e.target.value})) }
+                    />
+                </div>
+                <div className='field'>
+                    <label htmlFor="address">주소</label>
+                    <input
+                        id="address"
+                        name="address"
+                        type="text"
+                        value={form.address}
+                        onChange={(e) => setForm((prev) => ({...prev, address: e.target.value})) }
+                    />
+                </div>
+                <div className='field'>
+                    <label htmlFor="memo">배송메모</label>
+                    <textarea
+                        id="memo"
+                        name='memo'
+                        value={form.memo ?? ''}
+                        onChange={(e) => setForm((prev) => ({...prev, memo: e.target.value})) }
+                    />
+                </div>
+
+                <div className='summary'>
+                    <span className='total'>{formatPrice(totalPrice)}</span>
+                </div>
+
+                {error && <p className='error-box'>{error}</p>}
+                <button
+                    type="submit"
+                    className='btn btn-primary btn-block'
+                    disabled={submitting}
+                >
+                    {submitting ? '처리 중...' : formatPrice(totalPrice) + ' 결재하기'}
+                </button>
             </form>
         </div>
     )
