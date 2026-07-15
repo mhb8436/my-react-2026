@@ -28,7 +28,19 @@ export default function Checkout() {
     }
 
     const handleSubmit = async (e: React.SubmitEvent) => {
-
+        e.preventDefault();
+        setError(null);
+        setSubmitting(true) 
+        try{
+            const order = await createOrder({items, shipping: form, total: totalPrice})
+            clear(); // 장바구니 비우기 
+            navigate('/orders/' + order.id)
+            // 자바스크립트에서 해당 주소로 페이지를 옮겨 주는 역할을 해요 
+        }catch(e) {
+            setError('주문 처리 중 문제가 발생했어요')
+        }finally{
+            setSubmitting(false)
+        }
     }
 
     return (
