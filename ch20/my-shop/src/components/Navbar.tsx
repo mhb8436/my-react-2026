@@ -18,6 +18,9 @@ export default function Navbar() {
                         장바구니
                         {totalCount > 0 && <span className='cart-badge'>{totalCount}</span>}
                     </NavLink>
+                    <NavLink to="/orders" className="nav-link">
+                        주문내역                        
+                    </NavLink>
                 </div>
             </nav>
         </header>
