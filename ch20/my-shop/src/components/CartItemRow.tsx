@@ -9,7 +9,7 @@ interface CartItemProps {
 export default function CartItem({item} : CartItemProps) {
     const { setQuantity, removeItem } = useCart();
     const {product, quantity} = item;
-
+    
     return (
         <div className='cart-row'>
             <img className='thumb' src={product.image}/>
