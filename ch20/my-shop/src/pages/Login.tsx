@@ -19,4 +19,26 @@ export default function Login() {
 
     }
     
+    return (
+        <div className='stack'>
+            <div className='page-head'>
+                <h1>로그인</h1>                
+            </div>
+            <p className='muted'>데모용 - 어떤이메일/패스워드 로그인가능</p>
+            <form className='form' onSubmit={handleSubmit}>
+                <div className='field'>
+                    <label htmlFor='email'>이메일</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={email}
+                        onChange={(e)=>setEamil(e.target.value)}
+                        placeholder='you@email.com'
+                        required
+                    />
+                </div>
+            </form>
+        </div>
+    )
 }
