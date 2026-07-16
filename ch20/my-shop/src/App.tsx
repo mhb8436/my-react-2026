@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout';
 import Orders from './pages/Orders';
 import OrderDetail from './pages/OrderDetail';
 import { AuthProvider } from './context/AuthContext';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route element={<Layout/>}>
             <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login/>}/>
             <Route path="/products/:id" element={<ProductDetail/>} />
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>} />
