@@ -11,7 +11,7 @@ export default function Login() {
     // 직전 페이지 정보는 location.state.from 
     const from = (location.state as { from? : string} | null)?.from ?? '/';
 
-    const [email, setEamil] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [submitting, setSubmitting] = useState(false);
 
@@ -33,11 +33,28 @@ export default function Login() {
                         name="email"
                         type="email"
                         value={email}
-                        onChange={(e)=>setEamil(e.target.value)}
+                        onChange={(e)=>setEmail(e.target.value)}
                         placeholder='you@email.com'
                         required
                     />
                 </div>
+                <div className='field'>
+                    <label htmlFor='password'>패스워드</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
+                        placeholder='비밀번호'
+                        required
+                    />
+                </div>
+                <button 
+                    type="submit"
+                    className='btn btn-primary btn-block'
+                    disabled={submitting}
+                >{submitting ? '로그인 중...': '로그인'}</button>
             </form>
         </div>
     )
