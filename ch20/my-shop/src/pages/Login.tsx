@@ -16,7 +16,16 @@ export default function Login() {
     const [submitting, setSubmitting] = useState(false);
 
     async function handleSubmit(e: React.SubmitEvent) {
-
+        e.preventDefault();
+        setSubmitting(true)
+        try{
+            await login(email, password);
+            navigate(from, {replace: true})
+        }catch(e){
+            
+        }finally{
+            setSubmitting(false)
+        }
     }
     
     return (
