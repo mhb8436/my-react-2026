@@ -11,6 +11,7 @@ import Orders from './pages/Orders';
 import OrderDetail from './pages/OrderDetail';
 import { AuthProvider } from './context/AuthContext';
 import Login from './pages/Login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/products/:id" element={<ProductDetail/>} />
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/checkout" element={<Checkout/>} />
-            <Route path="/orders" element={<Orders/>} />
-            <Route path="/orders/:id" element={<OrderDetail/>} />
+            <Route path="/checkout" element={<ProtectedRoute><Checkout/></ProtectedRoute>} />
+            <Route path="/orders" element={<ProtectedRoute><Orders/></ProtectedRoute>} />
+            <Route path="/orders/:id" element={<ProtectedRoute><OrderDetail/></ProtectedRoute>} />
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>
