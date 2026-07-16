@@ -1,6 +1,16 @@
 import {useState} from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import loginJson from '../data/login.json';
+
+const LOGIN_IMAGES = loginJson as string[];
+
+function pickRandom(images: string[]) : string {
+    const rand = Math.floor(Math.random() * images.length);
+    // Math.random 임의늬 난수 발생 -> 0 ~ 1 사이의 난수 
+    // * images.length  0 ~ 4  -> Math.floor 정수 0, 1, 2, 3 
+    return images[rand];
+}
 
 export default function Login() {
     const { login } = useAuth();
@@ -11,6 +21,7 @@ export default function Login() {
     // 직전 페이지 정보는 location.state.from 
     const from = (location.state as { from? : string} | null)?.from ?? '/';
 
+    const [heroImage] = useState(()=>pickRandom(LOGIN_IMAGES));
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [submitting, setSubmitting] = useState(false);
@@ -30,6 +41,9 @@ export default function Login() {
     
     return (
         <div className='stack'>
+            <div className='login-image'>
+                <img src={heroImage}/>
+            </div>
             <div className='page-head'>
                 <h1>로그인</h1>                
             </div>
